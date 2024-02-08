@@ -7,6 +7,7 @@ import useOnLine from '../utils/hooks/useOnLine';
 import Tictactoe from '../components/offline/Tictaktoe';
 import themeContext from '../utils/context/themeContext';
 import { Button } from '@chakra-ui/react';
+import H from '../components/H';
 
 
  const HomePage = () => {
@@ -17,8 +18,8 @@ import { Button } from '@chakra-ui/react';
     
     <>
 
+        <Header/>
         
-        <Header></Header>
         <SearchBox></SearchBox>
         <Body></Body>
         <Footer></Footer>

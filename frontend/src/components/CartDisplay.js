@@ -1,22 +1,37 @@
 import React from "react";
 import { Button } from '@chakra-ui/react';
-import { clearCart, removeItem } from '../utils/redux/cartSlice';
+import { clearCart, removeItem, removeSingleItem,addItem } from '../utils/redux/cartSlice';
 import { useDispatch, useSelector } from 'react-redux'
 import Header from "./Header";
 import cartHelper from "../utils/Helper/cartHelper";
 import axios from "axios";
 import {loadStripe} from '@stripe/stripe-js';
+import {IMG_CDN_URL}  from '../utils/constants';
+import toast from 'react-hot-toast';
 
 const CartDisplay = () => {
     const cartItems=useSelector((store)=>store.cart.items);
-    const dispatch=useDispatch();
+    console.log(cartItems);
+        const dispatch=useDispatch();
     const helpClear=()=>{
       dispatch(clearCart());
     }
 
     const helpPop=()=>{
       dispatch(removeItem())
+      toast.error("Item Removed !!")
     }
+
+    const helpSinglePop=(item)=>{
+      dispatch((removeSingleItem(item)))
+    }
+
+    const handleAddItem=(item)=>{
+      // dispatch an action when someone clicks on this button
+      dispatch(addItem(item))
+      console.log(item);
+
+  }
 
     const handleCheckOut = async () => {
       let userEmail = localStorage.getItem("userEmail");
@@ -87,40 +102,61 @@ const CartDisplay = () => {
       {/* <Button colorScheme="orange" variant="solid" onClick={helpClear}>
         ClearCart
       </Button> */}
-      <div className="grid grid-cols-4 border space-x-4 pl-10 mt-7">
-        <h1 className="text-black m-auto">Name</h1>
-        <h1 className="text-black m-auto">Price</h1>
-        <h1 className="text-black m-auto">Quantity</h1>
-        <h1 className="text-black m-auto">Remove</h1>
-      </div>
-      {
-        cartItems.map((item)=>
-       
-        <div className="grid grid-cols-4 border space-x-4 pl-10 " id={item.id}>
-        <h1 className="text-black text-clip truncate m-auto">{item.name}</h1>
-        <h1 className="text-black m-auto">{item.price}</h1>
-        <h1 className="text-black m-auto">1</h1>
-        <div>
-        <Button colorScheme="orange" variant="solid" onClick={helpPop} className="my-1">
-        Pop
+     <div className="mx-8 sm:mx-[150px] my-8 sm:my-[60px]">
+  <div className="bg-orange-500 grid grid-cols-2 text-center">
+    <h1 className="text-white font-bold m-auto">Your Cart({cartItems.length})</h1>
+    <div className="flex justify-end">
+      <Button colorScheme="red" variant="solid" onClick={helpClear} className="my-1">
+        Clear Cart
       </Button>
+    </div>
+  </div>
+  <div className="grid grid-cols-6 border space-x-4 pl-10 mt-7">
+    <h1 className="text-black m-auto col-span-1">Action</h1>
+    <h1 className="text-black m-auto col-span-1">Product</h1>
+    <h1 className="text-black m-auto col-span-1">Name</h1>
+    <h1 className="text-black m-auto col-span-1">Price</h1>
+    <h1 className="text-black m-auto col-span-1">Quantity</h1>
+    <h1 className="text-black m-auto col-span-1">Total Price</h1>
+  </div>
+  {
+    cartItems.map((item)=>
+      <div className="grid grid-cols-6 border space-x-4 pl-10 sm:pl-0">
+        <div className="flex items-center ml-2 sm:ml-0 col-span-1">
+          <Button colorScheme="orange" variant="solid" onClick={helpPop} className="my-1">
+            Pop
+          </Button>
+        </div>
+        <div className="col-span-1">
+          <img src={IMG_CDN_URL+item.imageId} className="w-[50px] my-1"></img>
+        </div>
+        <h1 className="text-black text-clip truncate m-auto col-span-1">{item.name}</h1>
+        <h1 className="text-black m-auto col-span-1">{item.price}</h1>
+        <div className="grid grid-cols-3 items-center col-span-1">
+          <p className="text-black bg-orange-200 my-[10px] text-center mx-auto sm:mx-0" onClick={item.inStock<=1?()=>helpPop():()=>helpSinglePop(item)}>-</p>
+          <h1 className="text-black text-center my-1">{item.inStock}</h1>
+          <p className="text-black bg-orange-200 my-[10px] text-center mx-auto sm:mx-0" onClick={()=>handleAddItem(item)}>+</p>
+        </div>
+        <h1 className="text-black ml-[20px] my-[10px] col-span-1">{item.inStock*item.price}</h1>
       </div>
-      </div>
-      
-        )
-      }
+    )
+  }
+  <hr className="border-gray-800 my-8" />
+  <div className="flex flex-row bottom-0 right-0">
+    <div className="container flex flex-col items-center">
+      <Button colorScheme="orange" variant="solid" onClick={()=>{makePayment();handleCheckOut();}} className="my-1">
+        Checkout
+      </Button>
+    </div>
+    <div className="grid grid-cols-2">
+      <h1 className="text-black m-auto text-lg">Total Price:</h1>
+      <h1 className="text-black m-auto text-lg">₹ {cartHelper(cartItems)}</h1>
+    </div>
+  </div>
+</div>
 
-      {/* <div className="grid grid-cols-4 space-x-2">
-        <h1 className="text-black">{cartItems.map((item) => item.name)}</h1>
-      </div> */}
-      <div className="grid grid-cols-2">
-        <h1 className="text-black m-auto text-2xl bg-orange-500">Total Price</h1>
-        <h1 className="text-black m-auto text-2xl">{cartHelper(cartItems)}</h1>
-        <Button colorScheme="orange" variant="solid" onClick={()=>{makePayment();handleCheckOut();}} className="my-1">
-       Checkout
-      </Button>
-      </div>
-      
+
+
     </>
   );
 };

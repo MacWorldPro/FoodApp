@@ -36,54 +36,61 @@ const ProfileModal = ({  children }) => {
 
   return (
     <>
-      {children ? (
-        // <span onClick={onOpen}>{children}</span>
-        <Image
+{children ? (
+  <Image
+    borderRadius="full"
+    boxSize={{ base: "40px", md: "50px" }} // Adjusted boxSize for small and medium screens
+    src={user.pic}
+    alt={user.name}
+    onClick={onOpen}
+    cursor="pointer" // Add cursor pointer for better UX
+  />
+) : (
+  <IconButton
+    d={{ base: "flex", md: "none" }} // Hide IconButton on medium screens and above
+    icon={<ViewIcon />}
+    onClick={onOpen}
+  />
+)}
+
+<Modal size="lg" onClose={onClose} isOpen={isOpen} isCentered>
+  <ModalOverlay />
+  <ModalContent
+    h={{ base: "auto", md: "410px" }} // Adjusted height for small and medium screens
+  >
+    <ModalHeader
+      fontSize={{ base: "24px", md: "40px" }} // Adjusted fontSize for small and medium screens
+      fontFamily="Work Sans"
+      textAlign="center" // Centered ModalHeader text
+    >
+      {user.name}
+    </ModalHeader>
+    <ModalCloseButton />
+    <ModalBody
+      display="flex"
+      flexDir="column"
+      alignItems="center"
+      justifyContent="space-between"
+    >
+      <Image
         borderRadius="full"
-        boxSize="40px"
+        boxSize={{ base: "100px", md: "150px" }} // Adjusted boxSize for small and medium screens
         src={user.pic}
         alt={user.name}
-        onClick={onOpen}
       />
-      ) : (
-        <IconButton d={{ base: "flex" }} icon={<ViewIcon />} onClick={onOpen} />
-      )}
-      <Modal size="lg" onClose={onClose} isOpen={isOpen} isCentered>
-        <ModalOverlay />
-        <ModalContent h="410px">
-          <ModalHeader
-            fontSize="40px"
-            fontFamily="Work sans"
-            display="flex"
-            justifyContent="center"
-          >
-            {user.name}
-          </ModalHeader>
-          <ModalCloseButton />
-          <ModalBody
-            display="flex"
-            flexDir="column"
-            alignItems="center"
-            justifyContent="space-between"
-          >
-            <Image
-              borderRadius="full"
-              boxSize="150px"
-              src={user.pic}
-              alt={user.name}
-            />
-            <Text
-              fontSize={{ base: "28px", md: "30px" }}
-              fontFamily="Work sans"
-            >
-              Email: {user.email}
-            </Text>
-          </ModalBody>
-          <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+      <Text
+        fontSize={{ base: "20px", md: "30px" }} // Adjusted fontSize for small and medium screens
+        fontFamily="Work Sans"
+      >
+        Email: {user.email}
+      </Text>
+    </ModalBody>
+    <ModalFooter justifyContent="center"> {/* Centered ModalFooter */}
+      <Button onClick={onClose}>Close</Button>
+    </ModalFooter>
+  </ModalContent>
+</Modal>
+
     </>
   );
 };

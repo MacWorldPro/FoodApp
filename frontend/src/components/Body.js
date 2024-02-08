@@ -62,23 +62,21 @@ const Body = () => {
     <>
     
 
-      <div className='grid grid-cols-4'>
-        {
-          
-          
-          filterData?.map((restaurant)=>{
-            return (
-              <Link
-                key={restaurant?.info.id}
-                to={"/restaurant/" + restaurant?.info.id}
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4'>
+  {
+    filterData?.map((restaurant) => {
+      return (
+        <Link
+          key={restaurant?.info.id}
+          to={"/restaurant/" + restaurant?.info.id}
+        >
+          <RestaurantCard {...restaurant?.info} />
+        </Link>
+      );
+    })
+  }
+</div>
 
-              >
-                <RestaurantCard  {...restaurant?.info} />
-              </Link>
-            );
-          })
-        }
-      </div>
     </>
   )
 }

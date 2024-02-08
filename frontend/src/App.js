@@ -15,6 +15,7 @@ import Feedback from './components/Feedback';
 import NotFound from './NotFound';
 import Success from './components/Success';
 import Failure from './components/Failure';
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   const [filterData,setFilterData]=useState([]);
@@ -37,6 +38,7 @@ function App() {
           </Switch>
           </filterContext.Provider>
           </Provider>
+          <Toaster />
 
     </>
   );

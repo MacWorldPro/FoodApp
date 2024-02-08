@@ -14,7 +14,7 @@ function cartHelper(cartItems) {
 
   let totalPrice = 0;
   console.log(typeof(cartItems));
-  cartItems.map((item) => (totalPrice = totalPrice + item.price));
+  cartItems.map((item) => (totalPrice = totalPrice + (item.price*item.inStock)));
   
   return totalPrice;
 }

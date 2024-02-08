@@ -2,86 +2,131 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="bg-black p-[80px] mt-[30px]">
-  <div className="container grid grid-cols-6">
-    <div className="flex flex-col space-y-4">
-      <h2 className="font-medium text-slate-500">ABOUT</h2>
-      <div className="flex flex-col space-y-2 text-sm text-white font-bold">
-        <a href="#">Contact Us</a>
-        <a href="#">About Us</a>
-        <a href="#">Careers</a>
-        <a href="#">Flipkart Stories</a>
-        <a href="#">Press</a>
-        <a href="#">Flipkart Wholesale</a>
-        <a href="#">Cleartrip</a>
-        <a href="#">Corporate Information</a>
+<footer className="bg-black text-white">
+  <div className="container mx-auto py-12 px-4 flex flex-col items-center">
+    <div className="flex flex-wrap justify-between w-full">
+      <div className="w-full sm:w-1/2 lg:w-1/4 mb-8 sm:mb-0">
+        <h4 className="text-lg font-semibold mb-4">COMPANY</h4>
+        <ul>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              About us
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Team
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Careers
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Swiggy Blog
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Bug Bounty
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Swiggy Super
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="w-full sm:w-1/2 lg:w-1/4 mb-8 sm:mb-0">
+        <h4 className="text-lg font-semibold mb-4">CONTACT</h4>
+        <ul>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Help &amp; Support
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Partner with us
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Ride with us
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="w-full sm:w-1/2 lg:w-1/4 mb-8 sm:mb-0">
+        <h4 className="text-lg font-semibold mb-4">LEGAL</h4>
+        <ul>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Terms &amp; Conditions
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Refund &amp; Cancellation
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Cookie Policy
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Offer Terms
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Phishing &amp; Fraud
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="w-full sm:w-1/2 lg:w-1/4 mb-8 sm:mb-0">
+        <h4 className="text-lg font-semibold mb-4">GET SOCIAL</h4>
+        <ul>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Instagram
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div className="flex flex-col space-y-4">
-      <h2 className="font-medium text-slate-500">HELP</h2>
-      <div className="flex flex-col space-y-2 text-sm text-white font-bold">
-        <a href="#">Payments</a>
-        <a href="#">Shipping</a>
-        <a href="#">Cancellation &amp; Returns</a>
-        <a href="#">FAQ</a>
-        <a href="#">Report Infringement</a>
-      </div>
-    </div>
-    <div className="flex flex-col space-y-4">
-      <h2 className="font-medium text-slate-500">CONSUMER POLICY</h2>
-      <div className="flex flex-col space-y-2 text-sm text-white font-bold">
-        <a href="#">Cancellation &amp; Returns</a>
-        <a href="#">Terms Of Use</a>
-        <a href="#">Security</a>
-        <a href="#">Privacy</a>
-        <a href="#">Sitemap</a>
-        <a href="#">Grievance Redressal</a>
-        <a href="#">EPR Compliance</a>
-      </div>
-    </div>
-    <div className="flex flex-col space-y-4 mr-[40px]">
-      <h2 className="font-medium text-slate-500">SOCIAL</h2>
-      <div className="flex flex-col space-y-2 text-sm text-white font-bold">
-        <a href="#">Faccebook</a>
-        <a href="#">Twitter</a>
-        <a href="#">Youtube</a>
-      </div>
-    </div>
-    <div className="flex flex-col space-y-4">
-      <h2 className="font-medium text-slate-500">MAIL Us:</h2>
-      <div className="flex flex-col space-y-2 text-sm text-white font-bold">
-        <p>
-          Flipkart Internet Private Limited, Buildings Alyssa, Begonia &amp;
-          Clove Embassy Tech Village, Outer Ring Road, Devarabeesanahalli
-          Village, Bengaluru, 560103, Karnataka, India
-        </p>
-      </div>
-    </div>
-    <div className="flex flex-col space-y-4">
-      <h2 className="font-medium text-slate-500">MAIL Us:</h2>
-      <div className="flex flex-col space-y-2 text-sm text-white font-bold">
-        <p>
-          Flipkart Internet Private Limited, Buildings Alyssa, Begonia &amp;
-          Clove Embassy Tech Village, Outer Ring Road, Devarabeesanahalli
-          Village, Bengaluru, 560103, Karnataka, India
-        </p>
-        <p>CIN: U51109KA2012PTC066107</p>
-        <p>
-          Telephone:<a href="#">044-45614700</a>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div className="border-t-2 max-w-full mt-10">
-    <div className="flex flex-row justify-between text-center text-white">
-      <a href="#">Become a Seller</a>
-      <a href="#">Advertise</a>
-      <a href="#">Gift Cards</a>
-      <a href="#">Help Center</a>
-      <a href="#">@C 2007-2023 Flipkart.com</a>
+    <hr className="border-gray-800 my-8 w-full" />
+    <div className="text-sm text-gray-500 text-center">
+      <p>© 2024 Swiggy</p>
+      <p>All rights reserved.</p>
     </div>
   </div>
 </footer>
+
+
+
+
 
   )
 }

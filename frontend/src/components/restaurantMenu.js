@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../utils/redux/cartSlice";
 import Header from "./Header";
 import MenuShimmer from "../MenuShimmer";
+import toast from 'react-hot-toast';
 
 const RestaurantMenu = () => {
     const { resId } = useParams(); // call useParams and get value of restaurant id using object destructuring
@@ -27,6 +28,7 @@ const RestaurantMenu = () => {
     const handleAddItem=(item)=>{
         // dispatch an action when someone clicks on this button
         dispatch(addItem(item))
+        toast.success("Item Added Successfully!!")
         console.log(item);
 
     }
