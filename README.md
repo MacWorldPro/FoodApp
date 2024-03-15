@@ -38,6 +38,7 @@ This project is a full-stack food ordering application built using the MERN stac
 
     o Checkout for ordering your cart.
 
+![Screenshot 2024-03-15 195101](https://github.com/MacWorldPro/FoodApp/assets/129540983/c7d3ff8c-3777-416f-9f1d-64843bd473bc)
  
 
 7. MyOrder
@@ -80,7 +81,10 @@ This project is a full-stack food ordering application built using the MERN stac
 
     o User can be engaged till a good internet connection establishes.
 
-15. Payment 
+    
+![Screenshot 2024-03-15 192606](https://github.com/MacWorldPro/FoodApp/assets/129540983/f76f97cd-0d5d-4846-910f-8dc56c44ae85)
+
+16. Payment 
     
     o Handling Check out using Stripe payment checkout.
 
