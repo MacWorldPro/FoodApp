@@ -22,7 +22,7 @@ This project is a full-stack food ordering application built using the MERN stac
    ![Screenshot 2024-02-09 192621](https://github.com/MacWorldPro/FoodApp/assets/129540983/c42f06a7-d4ea-4ef6-9bfc-b32d3748f0b7)
 
 
-3. User profile
+2. User profile
 
     o User profile with all the data provided while registering.
 
@@ -30,7 +30,7 @@ This project is a full-stack food ordering application built using the MERN stac
 
   ![Screenshot 2024-02-09 192926](https://github.com/MacWorldPro/FoodApp/assets/129540983/9f071438-f3b4-447b-85be-b78ef3ac1747)
 
-5. Cart 
+3. Cart 
 
     o Add your favourite food in cart to order it.
 
@@ -41,14 +41,14 @@ This project is a full-stack food ordering application built using the MERN stac
 ![Screenshot 2024-03-15 195101](https://github.com/MacWorldPro/FoodApp/assets/129540983/c7d3ff8c-3777-416f-9f1d-64843bd473bc)
  
 
-7. MyOrder
+4. MyOrder
 
     o View the details of all the food that you have ordered till date
 
 ![Screenshot 2024-02-09 193305](https://github.com/MacWorldPro/FoodApp/assets/129540983/daaf5852-b985-4ebb-b7b6-b86b68186009)
 
 
-8. Feedback
+5. Feedback
 
     o Users can give feedback about thier experience on our App/food.
 
@@ -58,7 +58,7 @@ This project is a full-stack food ordering application built using the MERN stac
 
    
 
-10. Search
+6. Search
 
     o To enhance the user experience, a Search bar is provided in Home page.
 
@@ -66,7 +66,7 @@ This project is a full-stack food ordering application built using the MERN stac
 
       ![Screenshot 2024-02-09 192910](https://github.com/MacWorldPro/FoodApp/assets/129540983/ddd05a6b-09c0-45cc-95d0-f340584847cc)
 
-12. Menu page
+7. Menu page
 
     o It contains menu of restaurent selected by user.
 
@@ -75,7 +75,7 @@ This project is a full-stack food ordering application built using the MERN stac
       
       ![Screenshot 2024-02-09 193001](https://github.com/MacWorldPro/FoodApp/assets/129540983/368022aa-61e5-4160-bbd8-0048a330e1b5)
 
-14. Offline functionality
+8. Offline functionality
 
     o Keeping in Mind User experience, if there is not a good    internet connection than app closes and a new interface with tic-tac-toe game comes up.
 
@@ -84,7 +84,7 @@ This project is a full-stack food ordering application built using the MERN stac
     
 ![Screenshot 2024-03-15 192606](https://github.com/MacWorldPro/FoodApp/assets/129540983/f76f97cd-0d5d-4846-910f-8dc56c44ae85)
 
-16. Payment 
+9. Payment 
     
     o Handling Check out using Stripe payment checkout.
 
